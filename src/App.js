@@ -1,9 +1,9 @@
-import './App.css'
+import './input.css'
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
-import Createpost from './Pages/createPost'
+import Createpost from './Pages/CreatePost'
 import { signOut } from 'firebase/auth'
 import { auth } from '../src/firebase'
 
