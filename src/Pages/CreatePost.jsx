@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
 import { auth, db } from '../firebase'
 import { useNavigate } from 'react-router-dom'
 
-function CreatePost() {
+function CreatePost({ isAuth }) {
   const [title, setTitle] = useState('')
   const [postText, setPostText] = useState('')
 
@@ -22,9 +22,16 @@ function CreatePost() {
     })
     navigate('/')
   }
+
+  useEffect(() => {
+    if (!isAuth) {
+      navigate('/Login')
+    }
+  })
+
   return (
     <div className='bg-white p-8 flex justify-center items-center'>
-      <div className='bg-black flex-col w-2/4 h-full text-5xl text-center p-10 text-white'>
+      <div className='bg-gradient-to-b from-gray-700 via-gray-900 to-black flex-col w-2/4 h-full text-5xl text-center p-10 text-white rounded-3xl'>
         Create post
         <label className='block mx-5 mt-10 mb-4 text-4xl text-left'>
           Title

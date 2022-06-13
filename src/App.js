@@ -25,15 +25,17 @@ function App() {
           Home
         </Link>
 
-        <Link className='m-4' to='/createpost'>
-          CreatePost
-        </Link>
         {!isAuth ? (
           <Link className='m-4' to='/Login'>
             Login
           </Link>
         ) : (
-          <button onClick={signUserOut}>SignOut</button>
+          <>
+            <Link className='m-4' to='/createpost' isAuth={isAuth}>
+              CreatePost
+            </Link>
+            <button onClick={signUserOut}>SignOut</button>
+          </>
         )}
       </nav>
       <Routes>

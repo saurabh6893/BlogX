@@ -2,6 +2,7 @@ import React from 'react'
 import { auth, provider } from '../firebase'
 import { useNavigate } from 'react-router-dom'
 import { signInWithPopup } from 'firebase/auth'
+import { FcGoogle } from 'react-icons/fc'
 
 function Login({ setIsAuth }) {
   let navigate = useNavigate()
@@ -13,12 +14,12 @@ function Login({ setIsAuth }) {
     })
   }
   return (
-    <div className='flex-col m-8 text-5xl'>
-      <p className='m-4'>Login with Google?</p>
+    <div className='bg-white lbox'>
       <button
-        className='m-4 bg-[#354259] text-2xl text-white px-20 rounded-2xl py-3 border-2 hover:bg-[#dfdfdf] hover:text-black'
+        className='bg-[#354259] text-5xl text-white px-20 rounded-2xl py-5 border-2 hover:bg-[#282626]  flex justify-center items-center '
         onClick={signInWithGoogle}
       >
+        <FcGoogle className='mr-5' />
         Login
       </button>
     </div>
