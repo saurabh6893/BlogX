@@ -18,7 +18,7 @@ function Home() {
       {postList.map((post) => {
         return (
           <div className='page'>
-            <div className='aPost border-8 rounded-lg w-[40vw] px-10 py-5'>
+            <div className='aPost border-8 rounded-lg w-[40vw] mt-7 px-10 py-5'>
               <h1 className='text-5xl m-4 pb-4 border-b-4 capitalize'>
                 {post.title}
               </h1>

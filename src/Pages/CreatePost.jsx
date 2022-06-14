@@ -27,7 +27,7 @@ function CreatePost({ isAuth }) {
     if (!isAuth) {
       navigate('/Login')
     }
-  })
+  }, [])
 
   return (
     <div className='bg-white p-8 flex justify-center items-center'>
