@@ -8,7 +8,7 @@ import { signOut } from 'firebase/auth'
 import { auth } from '../src/firebase'
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false)
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'))
 
   const signUserOut = () => {
     signOut(auth).then(() => {
@@ -39,7 +39,7 @@ function App() {
         )}
       </nav>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home isAuth={isAuth} />} />
         <Route path='/Login' element={<Login setIsAuth={setIsAuth} />} />
         <Route path='/createpost' element={<Createpost isAuth={isAuth} />} />
       </Routes>
